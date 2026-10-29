@@ -1,0 +1,23 @@
+Bài 9: Tự Thiết Kế Hệ Thống Lưu Trữ và Phân Quyền Cho Dự Án CampusPay
+*Phần 1: Phân tích (I/O)
+-Đầu vào: 4 nhóm vai trò và hệ thống phân loại tài liệu dự án.
+-Đầu ra: Cấu trúc thư mục 2 cấp và bảng phân quyền tối thiểu 
+-Cấu trúc thư mục:  |Tech_Internal|
+                           |
+                    |Design_Internal|
+                           | 
+                    |Business_Internal|
+                           |
+                    |Shared_Collaboration|
+-->Các bước: Tạo thư mục -> Đặt tên -> Cấp quyền Restricted -> Chia sẻ chéo -> thử nghiệm & Thu hồi.
+*Phần 2: Bảng phân quyền & Giải quyết bẫy
+Bảng phân quyền:
+-Mã nguồn & API Keys: Ban KT (người chỉnh sửa), các ban khác & Nhà đầu tư (không cấp quyền).
+-Tài nguyên UI: Ban TK (người chỉnh sửa), các ban khác & Nhà đầu tư (không cấp quyền).
+-Business Plan: Ban KD (người chỉnh sửa), Ban KT (người xem), Nhà đầu tư & Ban TK (không cấp quyền).
+-Slide Pitch: Ban KD (người chỉnh sửa), các ban khác & Nhà đầu tư (người xem).
+-Dữ liệu Beta: Ban KT (người xem), các ban khác & Nhà đầu tư (không cấp quyền).
+*Giải quyết 3 bẫy:
+-Bẫy 1 : Cấp quyền Viewer để bảo vệ file gốc.
+-Bẫy 2 : Cấp quyền Viewer và giữa tính năng tải xuống để họ xem offline.
+-Bẫy 3 : Thu hồi quyền hoặc xóa email không cấp quyền
